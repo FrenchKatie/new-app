@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Begin HTML</title>
+  <style media="screen">
+    .col{
+      height: 300px;
+    }
+    .pink{
+      background-color: #FDA7DF;
+    }
+    .purple{
+      background-color: #D980FA;
+    }
+    .red{
+      background-color: #ED4C67;
+    }
+    .berry{
+      background-color: #B53471;
+    }
+  </style>
+  </head>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <body>
+    <h1 id="domHeader">Yo</h1>
+    <div class="container">
+    <div class="row">
+      <div class="col pink"></div>
+      <div class="col purple"></div>
+      <div class="w-100"></div>
+      <div class="col red"></div>
+      <div class="col berry"></div>
+    </div>
+  </div>
+  <div class="">
+    <button type="button" class="btn btn-primary" id="primary">Primary</button>
+    <button type="button" class="btn btn-success" id="success">Success</button>
+    <button type="button" class="btn btn-danger" id="danger">Danger</button>
+    <button type="button" class="btn btn-info" id="info">Info</button>
+    <button type="button" class="btn btn-dark" id="dark">dark</button>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+        $("#primary").click(function(){
+          $(".pink").toggle(2000);
+        });
+
+        $("#success").click(function(){
+          $(".purple").toggle(2000);
+        });
+
+        $("#danger").click(function(){
+          $(".red").toggle(2000);
+        });
+        //Using CSS method. This is with multiiple property changes - The syntax is different from this for a singular property.
+        $("#info").click(function(){
+          $(".berry").css({"background-color": "black", "border": "4px solid #9980FA"});
+        });
+        //The following is a call back funtion:
+        $("#dark").click(function(){
+          $(".purple").fadeOut(function(){
+            $(".purple").fadeIn();
+          });
+        });
+
+      })
+
+  </script>
+  </body>
+</html>
